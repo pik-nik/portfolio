@@ -8,6 +8,7 @@ import Skills from "@components/components/Skills"
 import Projects from "@components/components/Projects"
 import Contact from "@components/components/Contact"
 import { useEffect } from "react"
+import Sidebar from "@components/components/Sidebar"
 
 export default function Home() {
     return (
@@ -17,6 +18,7 @@ export default function Home() {
             </Head>
 
             <Navbar />
+            <Sidebar />
             <section
                 id="intro"
                 className="snap-start w-4/5 max-w-[1250px] mx-auto"

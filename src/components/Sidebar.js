@@ -1,39 +1,24 @@
-import { SocialIcon } from "react-social-icons"
+import { IoLogoLinkedin, IoLogoGithub, IoIosMail } from "react-icons/io"
+import Link from "next/link"
 const Sidebar = () => {
     return (
-        <nav className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
-            <div className="flex flex-row items-center">
-                {/* social icons */}
-                <SocialIcon
-                    url="https://www.linkedin.com/in/nikkipham/"
-                    fgColor="gray"
-                    bgColor="transparent"
+        <aside className="fixed right-0 px-10 hidden md:flex flex-col justify-center z-15 h-[80vh] items-start text-secondary dark:text-secondary_dark">
+            <Link href={"https://www.linkedin.com/in/nikkipham/"}>
+                <IoLogoLinkedin
+                    size={23}
+                    className="opacity-60 hover:opacity-100"
                 />
-                <SocialIcon
-                    url="https://github.com/pik-nik"
-                    fgColor="gray"
-                    bgColor="transparent"
+            </Link>
+            <Link href={"https://github.com/pik-nik"}>
+                <IoLogoGithub
+                    size={23}
+                    className="opacity-60 hover:opacity-100 my-3"
                 />
-                <SocialIcon
-                    className="cursor-pointer"
-                    network="email"
-                    fgColor="gray"
-                    bgColor="transparent"
-                />
-            </div>
-
-            <div className="flex flex-row items-center text-gray-300 cursor-pointer">
-                <SocialIcon
-                    className="cursor-pointer"
-                    network="email"
-                    fgColor="gray"
-                    bgColor="transparent"
-                />
-                <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
-                    Get In Touch
-                </p>
-            </div>
-        </nav>
+            </Link>
+            <Link href={"mailto:nikki.piknik@gmail.com"}>
+                <IoIosMail size={23} className="opacity-60 hover:opacity-100" />
+            </Link>
+        </aside>
     )
 }
 

@@ -52,24 +52,17 @@ const Navbar = () => {
                     <div key={index}>
                         <Link
                             href={nav.path}
-                            className="ml-5"
+                            className="ml-5 border-b-0 hover:border-b-2 hover:border-b-secondary dark:hover:border-b-secondary_dark py-1"
+                            // className={`ml-5 ${
+                            //     router.asPath === nav.path ? "text-primary" : ""
+                            // }`}
                             onClick={handleScroll}
                         >
                             {nav.label}
                         </Link>
                     </div>
                 ))}
-                {/* <div>
-                    <Link
-                        href="/#intro"
-                        className={`ml-5 ${
-                            router.asPath === "/#intro" ? "text-primary" : ""
-                        }`}
-                        onClick={handleScroll}
-                    >
-                        Intro
-                    </Link>
-                </div> */}
+
                 <div>
                     <Link href="/#resume" className="ml-5">
                         Resume
