@@ -1,4 +1,4 @@
-import info from './Info'
+import info from './info'
 import project from './project'
 import skill from './skill'
 import social from './social'
