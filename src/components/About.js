@@ -18,7 +18,7 @@ function About() {
                     </p>
                 </div>
             </div>
-            <div className="absolute bottom-5 text-secondary invisible md:visible">
+            <div className="absolute bottom-5 text-secondary dark:text-secondary_dark invisible md:visible">
                 <Link
                     href="/#skills"
                     className="items-center flex flex-col"

@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 function ProjectCard() {
     return (
-        <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] m:w-[600px] xl:w-[900px] snap-center p-10 bg-tertiary hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden">
+        <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] m:w-[600px] xl:w-[900px] snap-center p-10 bg-tertiary dark:bg-tertiary_dark hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden">
             <motion.img
                 src="/project-images/burger-mobile-version.jpg"
                 alt=""

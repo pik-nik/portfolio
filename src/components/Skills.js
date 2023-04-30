@@ -7,7 +7,7 @@ import handleScroll from "@components/utils/handleScroll"
 function Skills() {
     return (
         <div className="py-16 px-4 h-screen flex relative flex-col text-center md:text-left xl:px-10 justify-center min-h-screen xl:space-y-0 mx-auto items-center">
-            <h1 className="text-primary absolute top-32 uppercase tracking-[10px] text-2xl ">
+            <h1 className="text-primary dark:text-primary_dark absolute top-32 uppercase tracking-[10px] text-2xl ">
                 Tech Skills
             </h1>
             <div className="grid grid-cols-4 gap-5">
@@ -18,7 +18,7 @@ function Skills() {
                 <Skill />
                 <Skill />
             </div>
-            <div className="absolute bottom-5 text-secondary invisible md:visible">
+            <div className="absolute bottom-5 text-secondary dark:text-secondary_dark invisible md:visible">
                 <Link
                     href="/#projects"
                     className="items-center flex flex-col"
