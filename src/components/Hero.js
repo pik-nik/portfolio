@@ -4,23 +4,26 @@ import BackgroundOvals from "./BackgroundOvals"
 import Image from "next/image"
 import { IoIosArrowDown } from "react-icons/io"
 import handleScroll from "@components/utils/handleScroll"
+import { urlFor } from "../../sanity"
 
-function Hero() {
+function Hero({ pageInfo }) {
     return (
         <div className="relative align-middle flex flex-col md:flex-row  justify-evenly items-center text-center md:text-left h-screen">
             <div className="">
                 <h2 className="text-4xl pb-2">Hello, my name is</h2>
                 <h1 className="md:text-7xl sm:text-6xl text-5xl text-primary dark:text-primary_dark font-bold pb-2">
-                    Nikki Pham
+                    {pageInfo?.name}
                 </h1>
 
                 <h2 className="md:text-2xl sm:text-xl text-lg uppercase font-mono tracking-[4px] pb-2">
-                    Junior Software Engineer
+                    {pageInfo?.role}
                 </h2>
                 <h2 className="md:text-2xl sm:text-xl text-lg uppercase font-mono tracking-[4px] pb-2">
-                    based in sydney
+                    based in {pageInfo?.location}
                 </h2>
-
+                <h3 className="font-sans text-l pb-2">
+                    {pageInfo?.introDescription}
+                </h3>
                 <h3 className="font-serif text-xl">
                     <Link href="/">Check out my resume here</Link>
                 </h3>
@@ -29,8 +32,8 @@ function Hero() {
                 <BackgroundOvals />
                 <div className="rounded-full h-96 w-96 mx-auto object-cover">
                     <Image
-                        src="/profile-pic-transparent.png"
-                        alt="profile pic of Nikki Pham"
+                        src={urlFor(pageInfo?.heroImage).url()}
+                        alt={`profile pic of ${pageInfo?.name}`}
                         width="390"
                         height="390"
                         className="rounded-full object-none z-100"

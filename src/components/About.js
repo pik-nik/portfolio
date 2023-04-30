@@ -3,20 +3,16 @@ import { useRouter } from "next/router"
 import Link from "next/link"
 import { IoIosArrowDown } from "react-icons/io"
 import handleScroll from "@components/utils/handleScroll"
+import FakeTerminal from "./FakeTerminal"
 
-function About() {
+function About({ pageInfo }) {
     return (
-        <div className="relative py-16 px-4 h-screen flex justify-center items-center">
-            <div className="grid md: grid-cols-2">
-                <div>
-                    <h1>About</h1>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Corrupti atque officiis nulla corporis dolor optio
-                        nihil possimus, beatae perferendis id magni cum facilis
-                        quam saepe enim ipsam ducimus voluptate consequuntur!
-                    </p>
-                </div>
+        <div className="relative py-16 px-4 min-h-screen max-h-fit flex justify-center items-center text-center md:text-left">
+            <h1 className="text-primary dark:text-primary_dark absolute top-32 uppercase tracking-[10px] text-2xl">
+                About
+            </h1>
+            <div className="text-left relative mt-36 md:mt-24 lg:mt-10">
+                <FakeTerminal pageInfo={pageInfo} />
             </div>
             <div className="absolute bottom-5 text-secondary dark:text-secondary_dark invisible md:visible">
                 <Link
