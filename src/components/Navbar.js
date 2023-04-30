@@ -1,22 +1,25 @@
 import Link from "next/link"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai"
 import { useRouter } from "next/router"
 import handleScroll from "@components/utils/handleScroll"
-import { BsMoonStars, BsSun } from "react-icons/bs"
+import DarkModeButton from "./DarkModeButton"
 const Navbar = () => {
-    const [darkMode, setDarkMode] = useState(false)
-
-    const toggleDarkMode = () => {
-        setDarkMode(!darkMode)
-    }
-
-    const router = useRouter()
     const [nav, setNav] = useState(false)
+
+    const navigations = [
+        { label: "Intro", path: "/#intro" },
+        { label: "About", path: "/#about" },
+        { label: "Skills", path: "/#skills" },
+        { label: "Projects", path: "/#projects" },
+        { label: "Contact", path: "/#contact" },
+    ]
     const handleNav = () => {
         setNav(!nav)
     }
+
+    const router = useRouter()
 
     // const [routeHash, setRouteHash] = useState()
 
@@ -27,7 +30,7 @@ const Navbar = () => {
     // console.log(router.asPath)
 
     return (
-        <nav className="sticky top-0 py-5 px-10 my-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center bg-background h-18">
+        <nav className="sticky top-0 py-5 px-10 my-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center bg-background dark:bg-background_dark h-18">
             <motion.div
                 initial={{ x: 0, opacity: 0, scale: 0.5 }}
                 animate={{ x: 0, opacity: 1, scale: 1 }}
@@ -45,7 +48,18 @@ const Navbar = () => {
                 transition={{ duration: 1.5 }}
             >
                 {/* Links */}
-                <div>
+                {navigations.map((nav, index) => (
+                    <div key={index}>
+                        <Link
+                            href={nav.path}
+                            className="ml-5"
+                            onClick={handleScroll}
+                        >
+                            {nav.label}
+                        </Link>
+                    </div>
+                ))}
+                {/* <div>
                     <Link
                         href="/#intro"
                         className={`ml-5 ${
@@ -55,69 +69,31 @@ const Navbar = () => {
                     >
                         Intro
                     </Link>
-                </div>
-                <div>
-                    <Link
-                        href="/#about"
-                        className="ml-5"
-                        onClick={handleScroll}
-                    >
-                        About
-                    </Link>
-                </div>
-                <div>
-                    <Link
-                        href="/#skills"
-                        className="ml-5"
-                        onClick={handleScroll}
-                    >
-                        Skills
-                    </Link>
-                </div>
-                <div>
-                    <Link
-                        href="/#projects"
-                        className="ml-5"
-                        onClick={handleScroll}
-                    >
-                        Projects
-                    </Link>
-                </div>
-                <div>
-                    <Link
-                        href="/#contact"
-                        className="ml-5"
-                        onClick={handleScroll}
-                    >
-                        Contact
-                    </Link>
-                </div>
+                </div> */}
                 <div>
                     <Link href="/#resume" className="ml-5">
                         Resume
                     </Link>
                 </div>
-                <div
-                    className="ml-10 cursor-pointer text-secondary"
-                    onClick={toggleDarkMode}
-                >
-                    {darkMode ? <BsSun size={23} /> : <BsMoonStars size={23} />}
-                </div>
+                <DarkModeButton />
             </motion.div>
             <div onClick={handleNav} className="block md:hidden">
                 {nav ? (
                     <AiOutlineClose
                         size={20}
-                        className="text-secondary animate-pulse"
+                        className="text-secondary dark:text-secondary_dark animate-pulse"
                     />
                 ) : (
-                    <AiOutlineMenu size={25} className="text-secondary" />
+                    <AiOutlineMenu
+                        size={25}
+                        className="text-secondary dark:text-secondary_dark"
+                    />
                 )}
             </div>
             <div
                 className={
                     nav
-                        ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-tertiary ease-in-out duration-500"
+                        ? "fixed left-0 top-0 w-[60%] h-full bg-tertiary dark:bg-tertiary_dark ease-in-out duration-500"
                         : "fixed left-[-100%]"
                 }
             >
@@ -125,50 +101,21 @@ const Navbar = () => {
                     <Link href="/">N/P</Link>
                 </h1>
                 <ul className="p-4">
-                    <li>
-                        <Link
-                            href="/#intro"
-                            className="ml-5  border-b border-fourth"
-                        >
-                            Intro
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href="/#about"
-                            className="ml-5  border-b border-fourth"
-                        >
-                            About
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href="/#skills"
-                            className="ml-5 border-b border-fourth"
-                        >
-                            Skills
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href="/#projects"
-                            className="ml-5 border-b border-fourth"
-                        >
-                            Projects
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href="/#contact"
-                            className="ml-5 border-b border-fourth"
-                        >
-                            Contact
-                        </Link>
-                    </li>
+                    {navigations.map((nav, index) => (
+                        <li key={index}>
+                            <Link
+                                href={nav.path}
+                                className="ml-5  border-b border-fourth dark:border-fourth_dark"
+                            >
+                                {nav.label}
+                            </Link>
+                        </li>
+                    ))}
+
                     <li>
                         <Link
                             href="/#resume"
-                            className="ml-5 border-b border-fourth"
+                            className="ml-5 border-b border-fourth dark:border-fourth_dark"
                         >
                             Resume
                         </Link>

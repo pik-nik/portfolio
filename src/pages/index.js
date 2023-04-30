@@ -11,7 +11,7 @@ import { useEffect } from "react"
 
 export default function Home() {
     return (
-        <div className="h-screen snap-y snap-mandatory z-0 text-text overflow-y-scroll overflow-x-hidden scrollbar-track-tertiary/80 scrollbar-thumb-primary/80 scrollbar-thin">
+        <div className="h-screen snap-y snap-mandatory z-0 overflow-y-scroll overflow-x-hidden scrollbar-track-tertiary/80 dark:scrollbar-track-tertiary_dark/80 scrollbar-thumb-primary/80 dark:scrollbar-thumb-primary_dark/80 scrollbar-thin">
             <Head>
                 <title>Nikki Pham&apos;s Portfolio</title>
             </Head>

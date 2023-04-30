@@ -30,6 +30,12 @@ module.exports = {
             background_dark: "#343234",
         },
     },
+    variants: {
+        extend: {
+            backgroundColor: ["dark"],
+            textColor: ["dark"],
+        },
+    },
     darkMode: "class",
     plugins: [require("tailwind-scrollbar")],
 }
