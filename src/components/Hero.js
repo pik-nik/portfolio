@@ -7,21 +7,20 @@ import handleScroll from "@components/utils/handleScroll"
 
 function Hero() {
     return (
-        <div className="relative align-middle flex flex-col md:flex-row space-y-8 justify-center items-center text-left h-screen">
-            <div>
+        <div className="relative align-middle flex flex-col md:flex-row  justify-evenly items-center text-center md:text-left h-screen">
+            <div className="">
                 <h2 className="text-4xl pb-2">Hello, my name is</h2>
-                <h1 className="md:text-7xl sm:text-6xl text-4xl text-primary dark:text-primary_dark font-bold pb-2">
+                <h1 className="md:text-7xl sm:text-6xl text-5xl text-primary dark:text-primary_dark font-bold pb-2">
                     Nikki Pham
                 </h1>
+
                 <h2 className="md:text-2xl sm:text-xl text-lg uppercase font-mono tracking-[4px] pb-2">
-                    Junior Software Engineer/Optometrist
+                    Junior Software Engineer
                 </h2>
-                <h3 className="font-sans text-l pb-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Optio, fugit accusantium? Eius velit, sapiente nam in
-                    laboriosam labore ipsum doloremque beatae ipsa rem eum
-                    numquam ipsam illum reiciendis facere eos!
-                </h3>
+                <h2 className="md:text-2xl sm:text-xl text-lg uppercase font-mono tracking-[4px] pb-2">
+                    based in sydney
+                </h2>
+
                 <h3 className="font-serif text-xl">
                     <Link href="/">Check out my resume here</Link>
                 </h3>

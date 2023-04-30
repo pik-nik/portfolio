@@ -38,7 +38,9 @@ const Navbar = () => {
             >
                 {/* logo */}
                 <h1 className="font-serif text-3xl">
-                    <Link href="/">N/P</Link>
+                    <Link href="/#intro" onClick={handleScroll}>
+                        N/P
+                    </Link>
                 </h1>
             </motion.div>
             <motion.div
