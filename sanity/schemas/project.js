@@ -1,5 +1,5 @@
 export default {
-  name: 'profect',
+  name: 'project',
   title: 'Project',
   type: 'document',
   fields: [
@@ -33,6 +33,32 @@ export default {
       name: 'linkToBuild',
       title: 'LinkToBuild',
       type: 'url',
+    },
+    {
+      name: 'linkToGithub',
+      title: 'LinkToGithub',
+      type: 'url',
+    },
+    {
+      name: 'overview',
+      title: 'Overview',
+      type: 'text',
+    },
+    {
+      name: 'features',
+      title: 'Features',
+      type: 'array',
+      of: [{type: 'string'}],
+    },
+    {
+      name: 'problems',
+      title: 'Problems',
+      type: 'text',
+    },
+    {
+      name: 'lessons',
+      title: 'Lessons',
+      type: 'text',
     },
   ],
 }

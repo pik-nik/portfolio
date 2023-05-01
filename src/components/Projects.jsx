@@ -1,11 +1,10 @@
-import React from "react"
 import { motion } from "framer-motion"
 import ProjectCard from "./ProjectCard"
 import Link from "next/link"
 import { IoIosArrowDown } from "react-icons/io"
 import handleScroll from "@components/utils/handleScroll"
 
-function Projects() {
+function Projects({ projects }) {
     return (
         <div className="py-16 px-4 h-screen flex justify-center relative text-center">
             <div className="flex overflow-hidden relative flex-col text-lft md:flex-row max-w-full max-h-[80vh] px-10 justify-evenly mx-auto">
@@ -13,9 +12,9 @@ function Projects() {
                     Projects
                 </h1>
                 <div className="w-full flex-shrink-0 flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory mt-20  scrollbar-track-tertiary/80 dark:scrollbar-track-tertiary_dark/80 scrollbar-thumb-primary/80 dark:scrollbar-thumb-primary_dark/80 scrollbar-thin">
-                    <ProjectCard />
-                    <ProjectCard />
-                    <ProjectCard />
+                    {projects?.map(project => (
+                        <ProjectCard key={project._id} project={project} />
+                    ))}
                 </div>
             </div>
             <div className="absolute bottom-5 text-secondary dark:text-secondary_dark invisible md:visible">

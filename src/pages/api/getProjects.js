@@ -1,6 +1,6 @@
 import { client } from "../../../sanity"
 const query = `
-*[_type == "project"] {
+*[_type == "project"] | order(_createdAt desc) {
     ..., 
     technologies[]->
   } 

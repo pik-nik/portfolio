@@ -4,7 +4,7 @@ import { urlFor } from "../../sanity"
 
 function Skill({ skill }) {
     return (
-        <div className="group relative flex cursor-pointer justify-center rounded-2xl border-2 border-tertiary dark:border-primary_dark hover:border-secondary dark:hover:border-secondary_dark object-contain">
+        <div className="group relative flex cursor-pointer justify-center rounded-2xl border-2 border-tertiary dark:border-primary_dark hover:border-secondary dark:hover:border-secondary_dark dark:bg-text_dark/20 object-contain">
             <Image
                 src={urlFor(skill?.image).url()}
                 alt={skill?.title}

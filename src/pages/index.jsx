@@ -45,7 +45,7 @@ export default function Home({ pageInfo, projects, skills, socials }) {
                 id="projects"
                 className="snap-start w-4/5 max-w-[1250px] mx-auto"
             >
-                <Projects />
+                <Projects projects={projects} />
             </section>
             <section
                 id="contact"

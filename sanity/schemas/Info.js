@@ -29,12 +29,12 @@ export default {
     {
       name: 'introDescription',
       title: 'IntroDescription',
-      type: 'string',
+      type: 'text',
     },
     {
       name: 'aboutInformation',
       title: 'AboutInformation',
-      type: 'string',
+      type: 'text',
     },
     {
       name: 'email',
