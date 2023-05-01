@@ -4,19 +4,16 @@ import Link from "next/link"
 import { IoIosArrowDown } from "react-icons/io"
 import handleScroll from "@components/utils/handleScroll"
 
-function Skills() {
+function Skills({ skills }) {
     return (
-        <div className="py-16 px-4 h-screen flex relative flex-col text-center md:text-left xl:px-10 justify-center min-h-screen xl:space-y-0 mx-auto items-center">
-            <h1 className="text-primary dark:text-primary_dark absolute top-32 uppercase tracking-[10px] text-2xl ">
+        <div className="py-16 px-4 h-screen flex relative flex-col text-center md:text-left xl:px-10 justify-center min-h-screen max-h-fit xl:space-y-0 mx-auto items-center">
+            <h1 className="text-primary dark:text-primary_dark absolute top-32 uppercase tracking-[10px] text-2xl z-10">
                 Tech Skills
             </h1>
-            <div className="grid grid-cols-4 gap-5">
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
+            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-5 mt-10">
+                {skills?.map(skill => (
+                    <Skill key={skill._id} skill={skill} />
+                ))}
             </div>
             <div className="absolute bottom-5 text-secondary dark:text-secondary_dark invisible md:visible">
                 <Link

@@ -2,7 +2,8 @@ import { client } from "../../../sanity"
 const query = `
 *[_type == "info"][0] {
     ..., 
-    socials[]->
+    socials[]->, 
+    skillsOrder[]->
   }
   `
 

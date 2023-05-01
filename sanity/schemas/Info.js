@@ -47,5 +47,11 @@ export default {
       type: 'array',
       of: [{type: 'reference', to: {type: 'social'}}],
     },
+    {
+      name: 'skillsOrder',
+      title: 'SkillsOrder',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'skill'}}],
+    },
   ],
 }

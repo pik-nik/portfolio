@@ -24,9 +24,9 @@ function Hero({ pageInfo }) {
                 <h3 className="font-sans text-l pb-2">
                     {pageInfo?.introDescription}
                 </h3>
-                <h3 className="font-serif text-xl">
-                    <Link href="/">Check out my resume here</Link>
-                </h3>
+                <button className="py-2 px-4 font-sans rounded bg-transparent hover:bg-secondary dark:hover:bg-secondary_dark text-primary dark:text-primary_dark hover:text-background dark:hover:text-text_dark border border-primary dark:border-primary_dark hover:border-background hover:dark:border-background_dark">
+                    Check out my resume here
+                </button>
             </div>
             <div className="ml-10">
                 <BackgroundOvals />
@@ -36,7 +36,7 @@ function Hero({ pageInfo }) {
                         alt={`profile pic of ${pageInfo?.name}`}
                         width="390"
                         height="390"
-                        className="rounded-full object-none z-100"
+                        className="rounded-full object-contain h-[390px] w-[390px] z-100"
                     />
                 </div>
             </div>

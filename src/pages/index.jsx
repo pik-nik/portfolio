@@ -39,7 +39,7 @@ export default function Home({ pageInfo, projects, skills, socials }) {
                 id="skills"
                 className="snap-center w-4/5 max-w-[1250px] mx-auto"
             >
-                <Skills />
+                <Skills skills={pageInfo?.skillsOrder} />
             </section>
             <section
                 id="projects"
@@ -70,6 +70,6 @@ export const getStaticProps = async () => {
             skills,
             socials,
         },
-        revalidate: 86400,
+        revalidate: 60,
     }
 }
