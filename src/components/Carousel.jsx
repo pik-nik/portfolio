@@ -9,7 +9,6 @@ function Carousel({ projects }) {
     const [prevBtnEnabled, setPrevBtnEnabled] = useState(false)
     const [nextBtnEnabled, setNextBtnEnabled] = useState(false)
     const [selectedIndex, setSelectedIndex] = useState(0)
-    const [scrollSnaps, setScrollSnaps] = useState([])
 
     const scrollPrev = useCallback(() => {
         if (emblaApi) emblaApi.scrollPrev()
@@ -34,12 +33,11 @@ function Carousel({ projects }) {
     useEffect(() => {
         if (!emblaApi) return
         onSelect()
-        setScrollSnaps(emblaApi.scrollSnapList())
         emblaApi.on("select", onSelect)
         emblaApi.on("reInit", onSelect)
-    }, [emblaApi, setScrollSnaps, onSelect])
+    }, [emblaApi, onSelect])
     return (
-        <div className="w-full mt-40 overflow-hidden relative">
+        <div className="w-full mt-32 overflow-hidden relative">
             <div id="embla" ref={emblaRef}>
                 <div
                     id="embla_container"
@@ -72,9 +70,9 @@ function Carousel({ projects }) {
             </button>
             <div
                 id="embla_lines"
-                className="flex space-x-2 z-100 absolute bottom-[1%] left-1/2 -translate-x-1/2 "
+                className="flex space-x-2 z-100 absolute bottom-3 left-1/2 -translate-x-1/2 "
             >
-                {scrollSnaps.map((_, index) => (
+                {projects?.map((_, index) => (
                     <div
                         key={index}
                         onClick={() => scrollTo(index)}

@@ -7,7 +7,7 @@ import Link from "next/link"
 function ProjectCard({ project, selected }) {
     return (
         <article
-            className={`relative flex flex-col md:flex-row rounded-lg items-center space-y-7 space-x-7 flex-shrink-0 w-[85%] snap-center py-10 px-14 bg-tertiary dark:bg-tertiary_dark transition-opacity duration-200 overflow-hidden ${
+            className={`relative flex flex-col md:flex-row rounded-lg items-center space-y-7 space-x-7 flex-shrink-0 w-[85%] px-14 bg-tertiary dark:bg-tertiary_dark transition-opacity duration-200 m-0 max-h-fit pb-10  ${
                 selected ? "opacity-100" : "opacity-40"
             }`}
         >
@@ -32,13 +32,13 @@ function ProjectCard({ project, selected }) {
                 alt={project?.title}
                 width="500"
                 height="500"
-                className="w-[60%] rounded-lg object-cover object-center grow shadow-lg"
+                className="w-[60%] max-h-[100%] rounded-lg object-cover object-center grow shadow-lg "
             />
             <div className="px-0 font-sans">
                 <h4 className="py-1 mb-4 uppercase font-mono tracking-[3px] text-2xl border-b-4 border-b-secondary dark:border-b-secondary_dark">
                     {project?.title}
                 </h4>
-                <div className="flex space-x-2 my-3 items-center justify-center">
+                <div className="flex space-x-2 my-3 items-center justify-center m-auto">
                     {project?.technologies.map(tech => (
                         <div key={tech._id}>
                             <Image
@@ -46,7 +46,7 @@ function ProjectCard({ project, selected }) {
                                 alt={tech.title}
                                 width="50"
                                 height="50"
-                                className="w-[40px]"
+                                className="w-[40px] mx-0"
                             />
                         </div>
                     ))}

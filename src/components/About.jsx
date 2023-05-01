@@ -1,5 +1,3 @@
-import React from "react"
-import { useRouter } from "next/router"
 import Link from "next/link"
 import { IoIosArrowDown } from "react-icons/io"
 import handleScroll from "@components/utils/handleScroll"
