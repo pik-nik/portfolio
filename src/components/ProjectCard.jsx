@@ -4,9 +4,13 @@ import { GoLinkExternal } from "react-icons/go"
 import { IoLogoGithub } from "react-icons/io"
 import Link from "next/link"
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, selected }) {
     return (
-        <article className="relative flex flex-col md:flex-row rounded-lg items-center space-y-7 space-x-7 flex-shrink-0 w-[85%] snap-center p-10 bg-tertiary dark:bg-tertiary_dark hover:opacity-100 opacity-60  transition-opacity duration-200 overflow-hidden ">
+        <article
+            className={`relative flex flex-col md:flex-row rounded-lg items-center space-y-7 space-x-7 flex-shrink-0 w-[85%] snap-center py-10 px-14 bg-tertiary dark:bg-tertiary_dark transition-opacity duration-200 overflow-hidden ${
+                selected ? "opacity-100" : "opacity-40"
+            }`}
+        >
             <Link href={project?.linkToGithub}>
                 <IoLogoGithub
                     className="absolute top-5 right-5 cursor-pointer text-primary dark:text-primary_dark hover:text-secondary hover:dark:text-secondary_dark"

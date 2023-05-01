@@ -4,6 +4,8 @@ import Link from "next/link"
 import { IoIosArrowDown } from "react-icons/io"
 import handleScroll from "@components/utils/handleScroll"
 
+import Carousel from "./Carousel"
+
 function Projects({ projects }) {
     return (
         <div className="py-16 px-4 h-screen flex justify-center relative text-center">
@@ -11,11 +13,7 @@ function Projects({ projects }) {
                 <h1 className="text-primary dark:text-primary_dark absolute top-16 uppercase tracking-[10px] text-2xl">
                     Projects
                 </h1>
-                <div className="w-full flex-shrink-0 flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory mt-20  scrollbar-track-tertiary/80 dark:scrollbar-track-tertiary_dark/80 scrollbar-thumb-primary/80 dark:scrollbar-thumb-primary_dark/80 scrollbar-thin">
-                    {projects?.map(project => (
-                        <ProjectCard key={project._id} project={project} />
-                    ))}
-                </div>
+                <Carousel projects={projects} />
             </div>
             <div className="absolute bottom-5 text-secondary dark:text-secondary_dark invisible md:visible">
                 <Link
@@ -34,5 +32,3 @@ function Projects({ projects }) {
 }
 
 export default Projects
-
-//  projects.map project card
