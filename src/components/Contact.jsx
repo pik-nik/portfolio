@@ -26,23 +26,31 @@ function Contact({ pageInfo, socials }) {
                             </p>
                         </div>
                         <Link href={email?.url}>
-                            <div className="flex items-center justify-left space-x-5 my-1 w-max">
+                            <div className="flex items-center justify-left space-x-5 my-1 w-fit">
                                 <IoIosMail className="text-xl md:text-2xl text-primary dark:text-primary_dark " />
                                 <p className="text-md md:text-lg">
                                     {pageInfo?.email}
                                 </p>
                             </div>
                         </Link>
-                        <Link href={github?.url}>
-                            <div className="flex items-center justify-left space-x-5 my-1 w-max">
+                        <Link
+                            href={github?.url}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                        >
+                            <div className="flex items-center justify-left space-x-5 my-1 w-fit">
                                 <IoLogoGithub className="text-xl md:text-2xl text-primary dark:text-primary_dark " />
                                 <p className="text-md md:text-lg">
                                     {github?.url.replace("https://", "")}
                                 </p>
                             </div>
                         </Link>
-                        <Link href={linkedIn?.url}>
-                            <div className="flex items-center justify-left space-x-5 my-1 w-max">
+                        <Link
+                            href={linkedIn?.url}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                        >
+                            <div className="flex items-center justify-left space-x-5 my-1 w-fit">
                                 <IoLogoLinkedin className="text-xl md:text-2xl text-primary dark:text-primary_dark" />
                                 <p className="text-md md:text-lg">
                                     {linkedIn?.url.replace("https://www.", "")}

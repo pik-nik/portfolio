@@ -10,13 +10,17 @@ const Sidebar = ({ socials }) => {
             <Link href={email?.url}>
                 <IoIosMail size={23} className="opacity-60 hover:opacity-100" />
             </Link>
-            <Link href={github?.url}>
+            <Link href={github?.url} target="_blank" rel="noreferrer noopener">
                 <IoLogoGithub
                     size={23}
                     className="opacity-60 hover:opacity-100"
                 />
             </Link>
-            <Link href={linkedIn?.url}>
+            <Link
+                href={linkedIn?.url}
+                target="_blank"
+                rel="noreferrer noopener"
+            >
                 <IoLogoLinkedin
                     size={23}
                     className="opacity-60 hover:opacity-100"

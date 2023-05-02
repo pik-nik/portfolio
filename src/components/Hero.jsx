@@ -2,6 +2,7 @@ import BackgroundOvals from "./BackgroundOvals"
 import Image from "next/image"
 import { urlFor } from "../../sanity"
 import NavArrow from "./NavArrow"
+import Link from "next/link"
 
 function Hero({ pageInfo }) {
     return (
@@ -21,9 +22,15 @@ function Hero({ pageInfo }) {
                 <h3 className="font-sans text-l pb-2">
                     {pageInfo?.introDescription}
                 </h3>
-                <button className="button text-lg">
-                    Check out my resume here
-                </button>
+                <Link
+                    href="/Resume_Nikki Pham_Junior Software_Engineer_May_2023.pdf"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <button className="button text-lg">
+                        Check out my resume here
+                    </button>
+                </Link>
             </div>
             <div className="ml-10">
                 <BackgroundOvals />

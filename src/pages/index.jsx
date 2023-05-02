@@ -6,10 +6,6 @@ import About from "@components/components/About"
 import Skills from "@components/components/Skills"
 import Projects from "@components/components/Projects"
 import Contact from "@components/components/Contact"
-import { fetchInfo } from "@components/utils/fetchInfo"
-import { fetchProjects } from "@components/utils/fetchProject"
-import { fetchSkills } from "@components/utils/fetchSkills"
-import { fetchSocials } from "@components/utils/fetchSocials"
 import { client } from "../../sanity"
 
 export default function Home({ pageInfo, projects, socials }) {

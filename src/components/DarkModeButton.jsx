@@ -16,14 +16,14 @@ function DarkModeButton() {
         <>
             {currentTheme === "dark" ? (
                 <div
-                    className="ml-10 cursor-pointer text-secondary dark:text-secondary_dark opacity-60 hover:opacity-100 border border-background dark:border-background_dark hover:border-tertiary dark:hover:border-tertiary_dark p-1 rounded-lg transition-all duration-500"
+                    className="ml-10 cursor-pointer text-secondary dark:text-secondary_dark opacity-60 hover:opacity-100 border border-background dark:border-background_dark hover:border-tertiary dark:hover:border-tertiary_dark rounded-lg transition-all duration-500"
                     onClick={() => setTheme("light")}
                 >
                     <BsSun size={23} />
                 </div>
             ) : (
                 <div
-                    className="ml-10 cursor-pointer text-secondary dark:text-secondary_dark opacity-60 hover:opacity-100 border border-background dark:border-background_dark hover:border-tertiary dark:hover:border-tertiary_dark p-1 rounded-lg transition-all duration-500"
+                    className="ml-10 cursor-pointer text-secondary dark:text-secondary_dark opacity-60 hover:opacity-100 border border-background dark:border-background_dark hover:border-tertiary dark:hover:border-tertiary_dark rounded-lg transition-all duration-500"
                     onClick={() => setTheme("dark")}
                 >
                     <BsMoonStars size={23} />

@@ -2,12 +2,9 @@ import Link from "next/link"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai"
-import { useRouter } from "next/router"
 import handleScroll from "@components/utils/handleScroll"
 import DarkModeButton from "./DarkModeButton"
 const Navbar = () => {
-    const [nav, setNav] = useState(false)
-
     const navigations = [
         { label: "Intro", path: "/#intro" },
         { label: "About", path: "/#about" },
@@ -15,19 +12,11 @@ const Navbar = () => {
         { label: "Skills", path: "/#skills" },
         { label: "Contact", path: "/#contact" },
     ]
+    const [nav, setNav] = useState(false)
+
     const handleNav = () => {
         setNav(!nav)
     }
-
-    const router = useRouter()
-
-    // const [routeHash, setRouteHash] = useState()
-
-    // useEffect(() => {
-    //     setRouteHash(window.location.hash)
-    //     console.log(window.location.hash)
-    // }, [])
-    // console.log(router.asPath)
 
     return (
         <nav className="sticky top-0 py-5 px-10 my-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center bg-background dark:bg-background_dark h-18 transition-colors duration-500">
@@ -49,15 +38,11 @@ const Navbar = () => {
                 animate={{ x: 0, opacity: 1, scale: 1 }}
                 transition={{ duration: 1.5 }}
             >
-                {/* Links */}
                 {navigations.map((nav, index) => (
                     <div key={index}>
                         <Link
                             href={nav.path}
                             className="ml-5 border-b-0 hover:border-b-2 hover:border-b-secondary dark:hover:border-b-secondary_dark py-1"
-                            // className={`ml-5 ${
-                            //     router.asPath === nav.path ? "text-primary" : ""
-                            // }`}
                             onClick={handleScroll}
                         >
                             {nav.label}
@@ -66,22 +51,30 @@ const Navbar = () => {
                 ))}
 
                 <div>
-                    <Link href="/#resume" className="ml-5">
+                    <Link
+                        href="/Resume_Nikki Pham_Junior Software_Engineer_May_2023.pdf"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="ml-5 border-b-0 hover:border-b-2 hover:border-b-secondary dark:hover:border-b-secondary_dark py-1"
+                    >
                         Resume
                     </Link>
                 </div>
                 <DarkModeButton />
             </motion.div>
-            <div onClick={handleNav} className="block md:hidden">
+            <div className="flex md:hidden space-x-4">
+                <DarkModeButton />
                 {nav ? (
                     <AiOutlineClose
-                        size={20}
-                        className="text-secondary dark:text-secondary_dark animate-pulse"
+                        size={25}
+                        className="text-secondary dark:text-secondary_dark cursor-pointer"
+                        onClick={handleNav}
                     />
                 ) : (
                     <AiOutlineMenu
                         size={25}
-                        className="text-secondary dark:text-secondary_dark"
+                        className="text-secondary dark:text-secondary_dark cursor-pointer"
+                        onClick={handleNav}
                     />
                 )}
             </div>
@@ -95,21 +88,22 @@ const Navbar = () => {
                 <h1 className="font-serif text-3xl p-6">
                     <Link href="/">N/P</Link>
                 </h1>
-                <ul className="p-4">
+                <ul className="p-4 font-mono space-y-2">
                     {navigations.map((nav, index) => (
                         <li key={index}>
                             <Link
                                 href={nav.path}
-                                className="ml-5  border-b border-fourth dark:border-fourth_dark"
+                                className="ml-5 border-b border-fourth dark:border-fourth_dark"
                             >
                                 {nav.label}
                             </Link>
                         </li>
                     ))}
-
                     <li>
                         <Link
-                            href="/#resume"
+                            href="/Resume_Nikki Pham_Junior Software_Engineer_May_2023.pdf"
+                            target="_blank"
+                            rel="noreferrer noopener"
                             className="ml-5 border-b border-fourth dark:border-fourth_dark"
                         >
                             Resume
