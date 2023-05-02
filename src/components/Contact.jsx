@@ -8,37 +8,45 @@ function Contact({ pageInfo, socials }) {
     const linkedIn = socials.filter(contact => contact.title === "LinkedIn")[0]
     const github = socials.filter(contact => contact.title === "Github")[0]
     return (
-        <div className="h-screen flex relative flex-col text-center md:text-left px-10 mx-auto items-center">
+        <div className="min-h-screen max-h-fit flex relative flex-col text-center md:text-left px-10 mx-auto items-center justify-center">
             <h1 className="text-primary dark:text-primary_dark absolute top-36 uppercase tracking-[10px] text-2xl">
                 contact
             </h1>
-            <div className="mt-60 flex flex-col md:flex-row space-x-4">
+            <div className="mt-48 mb-36 flex flex-col md:flex-row space-x-4 space-y-4 md:space-y-0">
                 <div className="space-y-6 font-sans">
-                    <h2 className="justify-start text-xl">
+                    <h2 className="justify-start text-lg md:text-xl pr-10">
                         If you want to work together or just want to say hi, my
-                        inbox is always open
+                        inbox is always open.
                     </h2>
-                    <div>
-                        <div className="flex items-center justify-left space-x-5 my-1">
-                            <IoLocationSharp className="text-2xl text-primary dark:text-primary_dark" />
-                            <p className="text-lg">{pageInfo?.location}</p>
+                    <div className="pl-5 md:pl-0">
+                        <div className="flex items-center justify-left space-x-5 my-1 w-max">
+                            <IoLocationSharp className="text-xl md:text-2xl text-primary dark:text-primary_dark" />
+                            <p className="text-md md:text-lg">
+                                {pageInfo?.location}
+                            </p>
                         </div>
                         <Link href={email?.url}>
-                            <div className="flex items-center justify-left space-x-5 my-1">
-                                <IoIosMail className="text-2xl text-primary dark:text-primary_dark " />
-                                <p className="text-lg">{pageInfo?.email}</p>
+                            <div className="flex items-center justify-left space-x-5 my-1 w-max">
+                                <IoIosMail className="text-xl md:text-2xl text-primary dark:text-primary_dark " />
+                                <p className="text-md md:text-lg">
+                                    {pageInfo?.email}
+                                </p>
                             </div>
                         </Link>
                         <Link href={github?.url}>
-                            <div className="flex items-center justify-left space-x-5 my-1">
-                                <IoLogoGithub className="text-2xl text-primary dark:text-primary_dark " />
-                                <p className="text-lg">{github?.url}</p>
+                            <div className="flex items-center justify-left space-x-5 my-1 w-max">
+                                <IoLogoGithub className="text-xl md:text-2xl text-primary dark:text-primary_dark " />
+                                <p className="text-md md:text-lg">
+                                    {github?.url.replace("https://", "")}
+                                </p>
                             </div>
                         </Link>
                         <Link href={linkedIn?.url}>
-                            <div className="flex items-center justify-left space-x-5 my-1">
-                                <IoLogoLinkedin className="text-2xl text-primary dark:text-primary_dark " />
-                                <p className="text-lg">{linkedIn?.url}</p>
+                            <div className="flex items-center justify-left space-x-5 my-1 w-max">
+                                <IoLogoLinkedin className="text-xl md:text-2xl text-primary dark:text-primary_dark" />
+                                <p className="text-md md:text-lg">
+                                    {linkedIn?.url.replace("https://www.", "")}
+                                </p>
                             </div>
                         </Link>
                     </div>
@@ -46,8 +54,12 @@ function Contact({ pageInfo, socials }) {
                 <ContactForm email={pageInfo?.email} />
             </div>
 
-            <footer className="absolute bottom-10 w-full border-t-secondary dark:border-t-secondary_dark border-t-2 flex">
-                Made with Next.js and Tailwind
+            <footer className="font-mono absolute bottom-10 w-full border-t-secondary dark:border-t-secondary_dark border-t-2 text-center text-sm pt-3">
+                <p>
+                    Site created by me with Next.js | React | Tailwind |
+                    Sanity.io
+                </p>
+                <p className="py-1">&#169; pik-nik 2023</p>
             </footer>
         </div>
     )
