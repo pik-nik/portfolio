@@ -10,7 +10,7 @@ import { client } from "../../sanity"
 
 export default function Home({ pageInfo, projects, socials }) {
     return (
-        <div className="h-screen snap-y snap-mandatory z-0 overflow-y-scroll overflow-x-hidden scrollbar-track-tertiary/80 dark:scrollbar-track-tertiary_dark/80 scrollbar-thumb-primary/80 dark:scrollbar-thumb-primary_dark/80 scrollbar-thin">
+        <div className="h-screen snap-none md:snap-y md:snap-mandatory z-0 overflow-y-scroll overflow-x-hidden scrollbar-track-tertiary/80 dark:scrollbar-track-tertiary_dark/80 scrollbar-thumb-primary/80 dark:scrollbar-thumb-primary_dark/80 scrollbar-thin">
             <Head>
                 <title>Nikki Pham | Portfolio | Software Engineer</title>
                 <link
@@ -36,31 +36,31 @@ export default function Home({ pageInfo, projects, socials }) {
             <Sidebar socials={socials} />
             <section
                 id="intro"
-                className="snap-start w-4/5 max-w-[1250px] mx-auto"
+                className="snap-start w-11/12 md:w-4/5 max-w-[1250px] mx-auto"
             >
                 <Hero pageInfo={pageInfo} />
             </section>
             <section
                 id="about"
-                className="snap-center w-4/5 max-w-[1250px] mx-auto"
+                className="snap-start w-full md:w-4/5 max-w-[1250px] mx-auto"
             >
                 <About pageInfo={pageInfo} />
             </section>
             <section
                 id="projects"
-                className="snap-start w-4/5 max-w-[1250px] mx-auto"
+                className="snap-start w-full md:w-4/5 max-w-[1250px] mx-auto"
             >
                 <Projects projects={projects} skills={pageInfo?.skillsOrder} />
             </section>
             <section
                 id="skills"
-                className="snap-center w-4/5 max-w-[1250px] mx-auto"
+                className="snap-start w-full md:w-4/5 max-w-[1250px] mx-auto"
             >
                 <Skills skills={pageInfo?.skillsOrder} />
             </section>
             <section
                 id="contact"
-                className="snap-start w-4/5 max-w-[1250px] mx-auto"
+                className="snap-start w-full md:w-4/5 max-w-[1250px] mx-auto"
             >
                 <Contact pageInfo={pageInfo} socials={socials} />
             </section>
