@@ -8,7 +8,7 @@ function Contact({ pageInfo, socials }) {
     const linkedIn = socials.filter(contact => contact.title === "LinkedIn")[0]
     const github = socials.filter(contact => contact.title === "Github")[0]
     return (
-        <div className="min-h-screen max-h-fit flex relative flex-col text-center md:text-left px-10 mx-auto items-center justify-center">
+        <div className="md:min-h-screen md:max-h-fit flex relative text-center md:text-left px-5 md:px-10 mx-auto items-center justify-center">
             <h1 className="text-primary dark:text-primary_dark absolute top-36 uppercase tracking-[10px] text-2xl">
                 contact
             </h1>
@@ -65,7 +65,7 @@ function Contact({ pageInfo, socials }) {
             <footer className="font-mono absolute bottom-10 w-full border-t-secondary dark:border-t-secondary_dark border-t-2 text-center text-sm pt-3">
                 <p>
                     Site created by me with Next.js | React | Tailwind |
-                    Sanity.io
+                    Sanity.io | Vercel
                 </p>
                 <p className="py-1">&#169; pik-nik 2023</p>
             </footer>

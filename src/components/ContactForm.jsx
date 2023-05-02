@@ -16,7 +16,7 @@ function ContactForm() {
     return (
         <div>
             <form
-                className=" flex flex-col space-y-2 w-fit mx-auto font-sans text-sm md:text-base"
+                className=" flex flex-col w-full space-y-2 mx-auto font-sans text-sm md:text-base"
                 // onSubmit={handleSubmit(onSubmit)}
                 onSubmit={handleSubmit}
             >

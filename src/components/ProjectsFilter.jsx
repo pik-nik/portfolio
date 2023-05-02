@@ -1,6 +1,6 @@
 function ProjectsFilter({ skills, setSelectedTech }) {
     return (
-        <div className="absolute top-40 right-[12%] z-20 font-sans text-xs">
+        <div className="absolute top-[11.25rem] right-[12%] z-20 font-sans text-xs">
             <select
                 onChange={e => setSelectedTech(e.target.value)}
                 className="border border-tertiary dark:border-tertiary_dark rounded-lg focus:ring-secondary focus:border-secondary p-0.5 focus:outline"

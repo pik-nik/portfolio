@@ -22,7 +22,7 @@ function Projects({ projects, skills }) {
             </h1>
             <ProjectsFilter skills={skills} setSelectedTech={setSelectedTech} />
 
-            <div className="flex overflow-hidden flex-col md:flex-row max-w-full px-10 justify-evenly relative">
+            <div className="flex overflow-hidden flex-col md:flex-row max-w-full justify-evenly relative">
                 <Carousel projects={filteredProjects} />
             </div>
             <NavArrow nextPage={"Skills"} />

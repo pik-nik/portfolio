@@ -15,6 +15,6 @@
         @apply py-2 px-4 font-sans text-sm rounded hover:bg-secondary dark:hover:bg-secondary_dark text-primary dark:text-primary_dark hover:text-background dark:hover:text-text_dark border border-primary dark:border-primary_dark hover:border-background hover:dark:border-background_dark;
     }
     .contactInput {
-        @apply outline-none bg-tertiary/50 dark:bg-tertiary_dark/30 rounded-md border-b-2 px-4 py-2 border-primary dark:border-primary_dark placeholder-primary dark:placeholder-primary_dark transition-all focus:border-secondary dark:focus:border-secondary_dark;
+        @apply outline-none bg-tertiary/50 dark:bg-tertiary_dark/30 rounded-md border-b-2 px-4 py-2 border-primary dark:border-primary_dark placeholder-primary dark:placeholder-primary_dark transition-all focus:border-secondary dark:focus:border-secondary_dark grow;
     }
 }
