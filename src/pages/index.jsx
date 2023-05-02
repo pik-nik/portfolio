@@ -17,7 +17,25 @@ export default function Home({ pageInfo, projects, skills, socials }) {
     return (
         <div className="h-screen snap-y snap-mandatory z-0 overflow-y-scroll overflow-x-hidden scrollbar-track-tertiary/80 dark:scrollbar-track-tertiary_dark/80 scrollbar-thumb-primary/80 dark:scrollbar-thumb-primary_dark/80 scrollbar-thin">
             <Head>
-                <title>Nikki Pham&apos;s Portfolio</title>
+                <title>Nikki Pham | Portfolio | Software Engineer</title>
+                <link
+                    rel="apple-touch-icon"
+                    sizes="180x180"
+                    href="/apple-touch-icon.png"
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="32x32"
+                    href="/favicon-32x32.png"
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="16x16"
+                    href="/favicon-16x16.png"
+                />
+                <link rel="manifest" href="/site.webmanifest" />
             </Head>
             <Navbar />
             <Sidebar socials={socials} />
