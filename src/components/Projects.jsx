@@ -16,7 +16,7 @@ function Projects({ projects, skills }) {
     })
 
     return (
-        <div className="py-16 px-4 min-h-screen max-h-fit flex justify-center relative text-center mx-auto">
+        <div className="p-16 px-4 md:min-h-screen md:max-h-fit flex justify-center relative text-center mx-auto">
             <h1 className="text-primary dark:text-primary_dark absolute top-32 uppercase tracking-[10px] text-2xl">
                 Projects
             </h1>

@@ -3,7 +3,7 @@ import NavArrow from "./NavArrow"
 
 function About({ pageInfo }) {
     return (
-        <div className="relative py-16 px-4 min-h-screen max-h-fit flex justify-center items-center text-center md:text-left">
+        <div className="relative pt-16 px-4 md:min-h-screen md:max-h-fit flex justify-center items-center text-center md:text-left mx-2 md:mx-0">
             <h1 className="text-primary dark:text-primary_dark absolute top-32 uppercase tracking-[10px] text-2xl z-10">
                 About
             </h1>

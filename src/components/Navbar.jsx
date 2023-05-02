@@ -66,13 +66,13 @@ const Navbar = () => {
                 <DarkModeButton />
                 {nav ? (
                     <AiOutlineClose
-                        size={25}
+                        size={30}
                         className="text-secondary dark:text-secondary_dark cursor-pointer"
                         onClick={handleNav}
                     />
                 ) : (
                     <AiOutlineMenu
-                        size={25}
+                        size={30}
                         className="text-secondary dark:text-secondary_dark cursor-pointer"
                         onClick={handleNav}
                     />

@@ -3,7 +3,7 @@ import NavArrow from "./NavArrow"
 
 function Skills({ skills }) {
     return (
-        <div className="py-16 px-4 h-screen flex relative flex-col text-center md:text-left xl:px-10 justify-center min-h-screen max-h-fit xl:space-y-0 mx-auto items-center">
+        <div className="py-16 px-4 flex relative flex-col text-center md:text-left xl:px-10 justify-center min-h-screen max-h-fit xl:space-y-0 mx-auto items-center">
             <h1 className="text-primary dark:text-primary_dark absolute top-32 uppercase tracking-[10px] text-2xl z-10">
                 Tech Skills
             </h1>

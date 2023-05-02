@@ -37,7 +37,7 @@ function Carousel({ projects }) {
         emblaApi.on("reInit", onSelect)
     }, [emblaApi, onSelect])
     return (
-        <div className="w-full mt-32 overflow-hidden relative ">
+        <div className="w-full mt-32 overflow-hidden relative">
             <div id="embla" ref={emblaRef}>
                 <div
                     id="embla_container"
