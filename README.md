@@ -39,7 +39,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 <!-- Added -->
 
-[react-social-icons](https://www.npmjs.com/package/react-social-icons)
 Tailwind
 Next JS
 framer motion
