@@ -11,8 +11,8 @@ const Navbar = () => {
     const navigations = [
         { label: "Intro", path: "/#intro" },
         { label: "About", path: "/#about" },
-        { label: "Skills", path: "/#skills" },
         { label: "Projects", path: "/#projects" },
+        { label: "Skills", path: "/#skills" },
         { label: "Contact", path: "/#contact" },
     ]
     const handleNav = () => {

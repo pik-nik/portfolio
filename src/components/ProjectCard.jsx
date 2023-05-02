@@ -7,7 +7,7 @@ import Link from "next/link"
 function ProjectCard({ project, selected }) {
     return (
         <article
-            className={`relative flex flex-col md:flex-row rounded-lg items-center space-y-7 space-x-7 flex-shrink-0 w-[85%] px-14 bg-tertiary dark:bg-tertiary_dark transition-opacity duration-200 m-0 max-h-fit pb-10  ${
+            className={`relative flex flex-col md:flex-row rounded-lg items-center flex-shrink-0 w-[85%] px-14 bg-tertiary dark:bg-tertiary_dark transition-opacity duration-200 m-0 pb-10  ${
                 selected ? "opacity-100" : "opacity-40"
             }`}
         >
@@ -27,14 +27,16 @@ function ProjectCard({ project, selected }) {
             ) : (
                 ""
             )}
-            <Image
-                src={urlFor(project?.image).url()}
-                alt={project?.title}
-                width="500"
-                height="500"
-                className="w-[60%] max-h-[100%] rounded-lg object-cover object-center grow shadow-lg "
-            />
-            <div className="px-0 font-sans">
+            <div className="flex justify-center mx:0 md:pr-5 md: pt-12">
+                <Image
+                    src={urlFor(project?.image).url()}
+                    alt={project?.title}
+                    width="500"
+                    height="500"
+                    className="w-[60%] max-h-[100%] rounded-lg object-cover object-center grow shadow-lg"
+                />
+            </div>
+            <div className="px-0 font-sans w-[100%] md:w-[60%]">
                 <h4 className="py-1 mb-4 uppercase font-mono tracking-[3px] text-2xl border-b-4 border-b-secondary dark:border-b-secondary_dark">
                     {project?.title}
                 </h4>
@@ -52,7 +54,7 @@ function ProjectCard({ project, selected }) {
                     ))}
                 </div>
                 <p className="w-full text-sm">{project?.summary}</p>
-                <button className="mt-2 py-2 px-4 font-sans text-sm rounded bg-transparent hover:bg-secondary dark:hover:bg-secondary_dark text-primary dark:text-primary_dark hover:text-background dark:hover:text-text_dark border border-primary dark:border-primary_dark hover:border-tertiary hover:dark:border-tertiary_dark">
+                <button className="button  hover:border-tertiary hover:dark:border-tertiary_dark mt-2">
                     Read more
                 </button>
             </div>

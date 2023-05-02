@@ -1,7 +1,5 @@
-import Link from "next/link"
-import { IoIosArrowDown } from "react-icons/io"
-import handleScroll from "@components/utils/handleScroll"
 import FakeTerminal from "./FakeTerminal"
+import NavArrow from "./NavArrow"
 
 function About({ pageInfo }) {
     return (
@@ -12,18 +10,7 @@ function About({ pageInfo }) {
             <div className="text-left relative mt-36 md:mt-24 lg:mt-10">
                 <FakeTerminal pageInfo={pageInfo} />
             </div>
-            <div className="absolute bottom-5 text-secondary dark:text-secondary_dark invisible md:visible">
-                <Link
-                    href="/#skills"
-                    className="items-center flex flex-col"
-                    onClick={handleScroll}
-                >
-                    <p className="uppercase font-mono text-xs tracking-[3px]">
-                        skills
-                    </p>
-                    <IoIosArrowDown size={30} />
-                </Link>
-            </div>
+            <NavArrow nextPage={"Projects"} />
         </div>
     )
 }

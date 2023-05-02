@@ -7,11 +7,8 @@ const Sidebar = ({ socials }) => {
 
     return (
         <aside className="fixed right-0 px-10 hidden md:flex flex-col justify-center z-15 h-[80vh] items-start text-secondary dark:text-secondary_dark space-y-2">
-            <Link href={linkedIn?.url}>
-                <IoLogoLinkedin
-                    size={23}
-                    className="opacity-60 hover:opacity-100"
-                />
+            <Link href={email?.url}>
+                <IoIosMail size={23} className="opacity-60 hover:opacity-100" />
             </Link>
             <Link href={github?.url}>
                 <IoLogoGithub
@@ -19,8 +16,11 @@ const Sidebar = ({ socials }) => {
                     className="opacity-60 hover:opacity-100"
                 />
             </Link>
-            <Link href={email?.url}>
-                <IoIosMail size={23} className="opacity-60 hover:opacity-100" />
+            <Link href={linkedIn?.url}>
+                <IoLogoLinkedin
+                    size={23}
+                    className="opacity-60 hover:opacity-100"
+                />
             </Link>
         </aside>
     )

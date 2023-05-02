@@ -1,14 +1,13 @@
 import Head from "next/head"
 import styles from "@components/styles/Home.module.css"
-import Link from "next/link"
 import Navbar from "@components/components/Navbar"
+import Sidebar from "@components/components/Sidebar"
 import Hero from "@components/components/Hero"
 import About from "@components/components/About"
 import Skills from "@components/components/Skills"
 import Projects from "@components/components/Projects"
 import Contact from "@components/components/Contact"
 import { useEffect } from "react"
-import Sidebar from "@components/components/Sidebar"
 import { fetchInfo } from "@components/utils/fetchInfo"
 import { fetchProjects } from "@components/utils/fetchProject"
 import { fetchSkills } from "@components/utils/fetchSkills"
@@ -20,7 +19,6 @@ export default function Home({ pageInfo, projects, skills, socials }) {
             <Head>
                 <title>Nikki Pham&apos;s Portfolio</title>
             </Head>
-
             <Navbar />
             <Sidebar socials={socials} />
             <section
@@ -36,22 +34,22 @@ export default function Home({ pageInfo, projects, skills, socials }) {
                 <About pageInfo={pageInfo} />
             </section>
             <section
-                id="skills"
-                className="snap-center w-4/5 max-w-[1250px] mx-auto"
-            >
-                <Skills skills={pageInfo?.skillsOrder} />
-            </section>
-            <section
                 id="projects"
                 className="snap-start w-4/5 max-w-[1250px] mx-auto"
             >
                 <Projects projects={projects} skills={pageInfo?.skillsOrder} />
             </section>
             <section
+                id="skills"
+                className="snap-center w-4/5 max-w-[1250px] mx-auto"
+            >
+                <Skills skills={pageInfo?.skillsOrder} />
+            </section>
+            <section
                 id="contact"
                 className="snap-start w-4/5 max-w-[1250px] mx-auto"
             >
-                <Contact />
+                <Contact pageInfo={pageInfo} socials={socials} />
             </section>
         </div>
     )

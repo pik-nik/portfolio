@@ -37,11 +37,11 @@ function Carousel({ projects }) {
         emblaApi.on("reInit", onSelect)
     }, [emblaApi, onSelect])
     return (
-        <div className="w-full mt-32 overflow-hidden relative">
+        <div className="w-full mt-32 overflow-hidden relative ">
             <div id="embla" ref={emblaRef}>
                 <div
                     id="embla_container"
-                    className="flex flex-[0 0 90%] space-x-5"
+                    className="flex space-x-5 min-h-[60vh] max-h-fit"
                 >
                     {projects?.map((project, index) => (
                         <ProjectCard
@@ -54,7 +54,7 @@ function Carousel({ projects }) {
             </div>
             <button
                 id="embla__prev"
-                className="absolute z-100 top-[50%] left-[8.5%] text-secondary dark:text-secondary_dark disabled:opacity-0 animate-bounce"
+                className="absolute z-100 top-[45%] left-[8.5%] text-secondary dark:text-secondary_dark disabled:opacity-0 animate-bounce"
                 onClick={scrollPrev}
                 disabled={!prevBtnEnabled}
             >
@@ -62,7 +62,7 @@ function Carousel({ projects }) {
             </button>
             <button
                 id="embla__next"
-                className="absolute z-100 top-[50%] right-[8.5%] text-secondary dark:text-secondary_dark disabled:opacity-0 animate-bounce"
+                className="absolute z-100 top-[45%] right-[8.5%] text-secondary dark:text-secondary_dark disabled:opacity-0 animate-bounce"
                 onClick={scrollNext}
                 disabled={!nextBtnEnabled}
             >

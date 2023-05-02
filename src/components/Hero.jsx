@@ -1,10 +1,7 @@
-import React from "react"
-import Link from "next/link"
 import BackgroundOvals from "./BackgroundOvals"
 import Image from "next/image"
-import { IoIosArrowDown } from "react-icons/io"
-import handleScroll from "@components/utils/handleScroll"
 import { urlFor } from "../../sanity"
+import NavArrow from "./NavArrow"
 
 function Hero({ pageInfo }) {
     return (
@@ -24,7 +21,7 @@ function Hero({ pageInfo }) {
                 <h3 className="font-sans text-l pb-2">
                     {pageInfo?.introDescription}
                 </h3>
-                <button className="py-2 px-4 font-sans rounded bg-transparent hover:bg-secondary dark:hover:bg-secondary_dark text-primary dark:text-primary_dark hover:text-background dark:hover:text-text_dark border border-primary dark:border-primary_dark hover:border-background hover:dark:border-background_dark">
+                <button className="button text-lg">
                     Check out my resume here
                 </button>
             </div>
@@ -40,18 +37,7 @@ function Hero({ pageInfo }) {
                     />
                 </div>
             </div>
-            <div className="absolute bottom-5 text-secondary dark:text-secondary_dark invisible md:visible">
-                <Link
-                    href="/#about"
-                    className="items-center flex flex-col"
-                    onClick={handleScroll}
-                >
-                    <p className="uppercase font-mono text-xs tracking-[3px]">
-                        about
-                    </p>
-                    <IoIosArrowDown size={30} />
-                </Link>
-            </div>
+            <NavArrow nextPage={"About"} />
         </div>
     )
 }
