@@ -19,7 +19,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="sticky top-0 py-5 px-10 my-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center bg-background dark:bg-background_dark h-18 transition-colors duration-500">
+        <nav className="sticky top-0 py-5 px-10 my-5 flex items-start justify-between max-w-7xl mx-auto z-30 xl:items-center bg-background dark:bg-background_dark h-18 transition-colors duration-500">
             <motion.div
                 initial={{ x: 0, opacity: 0, scale: 0.5 }}
                 animate={{ x: 0, opacity: 1, scale: 1 }}

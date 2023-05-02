@@ -7,7 +7,7 @@ import Link from "next/link"
 function ProjectCard({ project, selected }) {
     return (
         <article
-            className={`relative flex flex-col md:flex-row rounded-lg items-center flex-shrink-0 w-full md:w-[85%] px-14 bg-tertiary dark:bg-tertiary_dark transition-opacity duration-200 m-0 pb-10 justify-center space-y-3 md:space-y-0 ${
+            className={`relative flex flex-col md:flex-row rounded-lg items-center flex-shrink-0 w-full md:w-[85%] px-8 md:px-14 bg-tertiary dark:bg-tertiary_dark transition-opacity duration-200 m-0 pb-10 justify-center space-y-3 md:space-y-0 ${
                 selected ? "opacity-100" : "opacity-40"
             }`}
         >
