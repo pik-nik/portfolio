@@ -32,7 +32,7 @@ export default function Home({ pageInfo, projects, socials }) {
                 />
                 <link rel="manifest" href="/site.webmanifest" />
             </Head>
-            <Navbar />
+            <Navbar socials={socials} />
             <Sidebar socials={socials} />
             <section
                 id="intro"

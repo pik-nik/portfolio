@@ -8,7 +8,7 @@ function Contact({ pageInfo, socials }) {
     const linkedIn = socials.filter(contact => contact.title === "LinkedIn")[0]
     const github = socials.filter(contact => contact.title === "Github")[0]
     return (
-        <div className="md:min-h-screen md:max-h-fit flex relative text-center md:text-left px-5 md:px-10 mx-auto items-center justify-center w-[95%]">
+        <div className="md:min-h-screen md:max-h-fit flex relative text-center md:text-left px-5 md:px-10 mx-auto items-center justify-center w-[80%] md:w-[95%]">
             <h1 className="text-primary dark:text-primary_dark absolute top-36 uppercase tracking-[10px] text-2xl">
                 contact
             </h1>
