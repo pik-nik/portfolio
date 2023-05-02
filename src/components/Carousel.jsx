@@ -54,7 +54,7 @@ function Carousel({ projects }) {
             </div>
             <button
                 id="embla__prev"
-                className="absolute z-100 top-[45%] left-[8.5%] text-secondary dark:text-secondary_dark disabled:opacity-0 animate-bounce"
+                className="absolute z-100 top-[45%] left-[1%] md:left-[8.5%] text-secondary dark:text-secondary_dark disabled:opacity-0 animate-bounce"
                 onClick={scrollPrev}
                 disabled={!prevBtnEnabled}
             >
@@ -62,7 +62,7 @@ function Carousel({ projects }) {
             </button>
             <button
                 id="embla__next"
-                className="absolute z-100 top-[45%] right-[8.5%] text-secondary dark:text-secondary_dark disabled:opacity-0 animate-bounce"
+                className="absolute z-100 top-[45%] right-[1%] md:right-[8.5%] text-secondary dark:text-secondary_dark disabled:opacity-0 animate-bounce"
                 onClick={scrollNext}
                 disabled={!nextBtnEnabled}
             >

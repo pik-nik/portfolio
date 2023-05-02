@@ -14,7 +14,7 @@ function Contact({ pageInfo, socials }) {
             </h1>
             <div className="mt-48 mb-36 flex flex-col md:flex-row space-x-4 space-y-4 md:space-y-0">
                 <div className="space-y-6 font-sans">
-                    <h2 className="justify-start text-lg md:text-xl pr-10">
+                    <h2 className="justify-start text-lg md:text-xl p-0 md:pr-10">
                         If you want to work together or just want to say hi, my
                         inbox is always open.
                     </h2>
