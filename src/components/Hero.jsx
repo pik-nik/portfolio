@@ -34,6 +34,7 @@ function Hero({ pageInfo }) {
                         width="390"
                         height="390"
                         className="rounded-full object-contain h-[390px] w-[390px] z-100"
+                        priority
                     />
                 </div>
             </div>

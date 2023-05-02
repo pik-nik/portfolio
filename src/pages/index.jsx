@@ -1,5 +1,4 @@
 import Head from "next/head"
-import styles from "@components/styles/Home.module.css"
 import Navbar from "@components/components/Navbar"
 import Sidebar from "@components/components/Sidebar"
 import Hero from "@components/components/Hero"
@@ -7,13 +6,13 @@ import About from "@components/components/About"
 import Skills from "@components/components/Skills"
 import Projects from "@components/components/Projects"
 import Contact from "@components/components/Contact"
-import { useEffect } from "react"
 import { fetchInfo } from "@components/utils/fetchInfo"
 import { fetchProjects } from "@components/utils/fetchProject"
 import { fetchSkills } from "@components/utils/fetchSkills"
 import { fetchSocials } from "@components/utils/fetchSocials"
+import { client } from "../../sanity"
 
-export default function Home({ pageInfo, projects, skills, socials }) {
+export default function Home({ pageInfo, projects, socials }) {
     return (
         <div className="h-screen snap-y snap-mandatory z-0 overflow-y-scroll overflow-x-hidden scrollbar-track-tertiary/80 dark:scrollbar-track-tertiary_dark/80 scrollbar-thumb-primary/80 dark:scrollbar-thumb-primary_dark/80 scrollbar-thin">
             <Head>
@@ -74,16 +73,29 @@ export default function Home({ pageInfo, projects, skills, socials }) {
 }
 
 export const getStaticProps = async () => {
-    const pageInfo = await fetchInfo()
-    const projects = await fetchProjects()
-    const skills = await fetchSkills()
-    const socials = await fetchSocials()
+    // const pageInfo = await fetchInfo()
+    const pageInfo = await client.fetch(`
+    *[_type == "info"][0] {
+        ..., 
+        socials[]->, 
+        skillsOrder[]->
+      }
+      `)
+    // const projects = await fetchProjects()
+    const projects =
+        await client.fetch(`*[_type == "project"] | order(_createdAt desc) {
+        ..., 
+        technologies[]->
+      } `)
+    // const skills = await fetchSkills()
+    // const socials = await fetchSocials()
+    const socials = await client.fetch(`*[_type == "social"]`)
 
     return {
         props: {
             pageInfo,
             projects,
-            skills,
+            // skills,
             socials,
         },
         revalidate: 60,
