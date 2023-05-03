@@ -27,9 +27,6 @@ function ContactForm() {
                         id="name"
                         name="name"
                         placeholder="Name"
-                        onInvalid={e =>
-                            e.target.setCustomValidity("Enter name here")
-                        }
                         // {...register("name")}
                         required
                     />
@@ -44,9 +41,6 @@ function ContactForm() {
                         id="email"
                         name="email"
                         placeholder="Email"
-                        onInvalid={e =>
-                            e.target.setCustomValidity("Enter email here")
-                        }
                         // {...register("email")}
                         required
                     />
@@ -62,9 +56,6 @@ function ContactForm() {
                     id="subject"
                     name="subject"
                     placeholder="Subject"
-                    onInvalid={e =>
-                        e.target.setCustomValidity("Enter subject here")
-                    }
                     // {...register("subject")}
                     required
                 />
@@ -79,9 +70,6 @@ function ContactForm() {
                     placeholder="Message"
                     rows="4"
                     name="message"
-                    onInvalid={e =>
-                        e.target.setCustomValidity("Enter message here")
-                    }
                     // {...register("message")}
                     required
                 />
