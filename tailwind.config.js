@@ -25,7 +25,7 @@ module.exports = {
             primary_dark: "#C4FF9E",
             secondary_dark: "#5BB780",
             tertiary_dark: "#134343",
-            fourth_dark: "#154145",
+            fourth_dark: "#002e23",
             text_dark: "#ffffff",
             background_dark: "#1a1c1c",
         },

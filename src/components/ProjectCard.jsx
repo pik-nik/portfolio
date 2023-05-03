@@ -48,7 +48,7 @@ function ProjectCard({ project, selected }) {
                 <h4 className="py-1 mb-4 uppercase font-mono tracking-[3px] text-2xl border-b-4 border-b-secondary dark:border-b-secondary_dark">
                     {project?.title}
                 </h4>
-                <div className="flex space-x-2 my-3 items-center justify-center m-auto">
+                <div className="flex space-x-2 my-3 items-center justify-center m-auto bg-text_dark/40 w-fit px-2 py-1 rounded-lg">
                     {project?.technologies.map(tech => (
                         <div key={tech._id}>
                             <Image
