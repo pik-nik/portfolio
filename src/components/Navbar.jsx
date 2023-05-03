@@ -6,7 +6,7 @@ import DarkModeButton from "./DarkModeButton"
 import PhoneNavBar from "./PhoneNavBar"
 import ContentMenu from "./ContentMenu"
 
-const Navbar = ({ socials }) => {
+const Navbar = ({ socials, pageInfo }) => {
     const navigations = [
         { label: "Intro", path: "/#intro" },
         { label: "About", path: "/#about" },
@@ -54,7 +54,7 @@ const Navbar = ({ socials }) => {
 
                 <div>
                     <Link
-                        href="/Resume_Nikki Pham_Junior Software_Engineer_May_2023.pdf"
+                        href={pageInfo?.resumeURL}
                         target="_blank"
                         rel="noreferrer noopener"
                         className="ml-5 border-b-0 hover:border-b-2 hover:border-b-secondary dark:hover:border-b-secondary_dark py-1"
@@ -65,7 +65,11 @@ const Navbar = ({ socials }) => {
                 <DarkModeButton />
             </motion.div>
             <PhoneNavBar nav={nav} handleNav={handleNav} socials={socials} />
-            <ContentMenu nav={nav} navigations={navigations} />
+            <ContentMenu
+                nav={nav}
+                navigations={navigations}
+                pageInfo={pageInfo}
+            />
         </nav>
     )
 }

@@ -32,7 +32,7 @@ export default function Home({ pageInfo, projects, socials }) {
                 />
                 <link rel="manifest" href="/site.webmanifest" />
             </Head>
-            <Navbar socials={socials} />
+            <Navbar socials={socials} pageInfo={pageInfo} />
             <Sidebar socials={socials} />
             <section
                 id="intro"
@@ -74,7 +74,8 @@ export const getStaticProps = async () => {
     *[_type == "info"][0] {
         ..., 
         socials[]->, 
-        skillsOrder[]->
+        skillsOrder[]->,
+        "resumeURL": resume.asset->url
       }
       `)
     // const projects = await fetchProjects()

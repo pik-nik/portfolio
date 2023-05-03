@@ -1,5 +1,5 @@
 import Link from "next/link"
-function ContentMenu({ nav, navigations }) {
+function ContentMenu({ nav, navigations, pageInfo }) {
     return (
         <div
             className={
@@ -24,7 +24,7 @@ function ContentMenu({ nav, navigations }) {
                 ))}
                 <li>
                     <Link
-                        href="/Resume_Nikki Pham_Junior Software_Engineer_May_2023.pdf"
+                        href={pageInfo?.resumeURL}
                         target="_blank"
                         rel="noreferrer noopener"
                         className="ml-5 border-b border-fourth dark:border-primary_dark"

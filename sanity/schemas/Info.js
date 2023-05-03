@@ -53,5 +53,10 @@ export default {
       type: 'array',
       of: [{type: 'reference', to: {type: 'skill'}}],
     },
+    {
+      title: 'Resume',
+      name: 'resume',
+      type: 'file',
+    },
   ],
 }

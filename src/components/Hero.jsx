@@ -23,7 +23,7 @@ function Hero({ pageInfo }) {
                     {pageInfo?.introDescription}
                 </h3>
                 <Link
-                    href="/Resume_Nikki Pham_Junior Software_Engineer_May_2023.pdf"
+                    href={pageInfo?.resumeURL}
                     target="_blank"
                     rel="noreferrer noopener"
                 >
