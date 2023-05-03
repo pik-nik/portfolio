@@ -62,9 +62,12 @@ function ProjectCard({ project, selected }) {
                     ))}
                 </div>
                 <p className="w-full text-sm">{project?.summary}</p>
-                <button className="button  hover:border-tertiary hover:dark:border-tertiary_dark mt-2">
+                {
+                    /* <button className="button hover:border-tertiary hover:dark:border-tertiary_dark mt-2">
                     Read more
-                </button>
+                </button> */
+                    // add this when  projects details page is added.
+                }
             </div>
         </article>
     )

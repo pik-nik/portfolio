@@ -12,7 +12,7 @@ function Contact({ pageInfo, socials }) {
             <h1 className="text-primary dark:text-primary_dark absolute top-36 uppercase tracking-[10px] text-2xl">
                 contact
             </h1>
-            <div className="mt-48 mb-36 flex flex-col md:flex-row space-x-4 space-y-4 md:space-y-0">
+            <div className="mt-48 mb-48 flex flex-col md:flex-row space-x-4 space-y-4 md:space-y-0">
                 <div className="space-y-6 font-sans">
                     <h2 className="justify-start text-lg md:text-xl p-0 md:pr-10">
                         If you want to work together or just want to say hi, my
@@ -39,7 +39,7 @@ function Contact({ pageInfo, socials }) {
                             rel="noreferrer noopener"
                         >
                             <div className="flex items-center justify-left space-x-5 my-1 w-fit">
-                                <IoLogoGithub className="text-xl md:text-2xl text-primary dark:text-primary_dark " />
+                                <IoLogoGithub className="text-xl md:text-2xl text-primary dark:text-primary_dark" />
                                 <p className="text-md md:text-lg">
                                     {github?.url.replace("https://", "")}
                                 </p>

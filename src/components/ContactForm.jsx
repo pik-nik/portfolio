@@ -16,11 +16,11 @@ function ContactForm() {
     return (
         <div>
             <form
-                className=" flex flex-col w-full space-y-2 mx-auto font-sans text-sm md:text-base"
+                className="flex flex-col max-w-full space-y-2 mx-auto font-sans text-sm md:text-base"
                 // onSubmit={handleSubmit(onSubmit)}
                 onSubmit={handleSubmit}
             >
-                <div className="flex space-x-2">
+                <div className="flex flex-col space-x-0 space-y-2 md:flex-row md:space-x-2 md:space-y-0">
                     <input
                         className="contactInput"
                         type="text"
