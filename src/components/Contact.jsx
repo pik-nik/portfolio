@@ -12,7 +12,7 @@ function Contact({ pageInfo, socials }) {
             <h1 className="text-primary dark:text-primary_dark absolute top-36 uppercase tracking-[10px] text-2xl">
                 contact
             </h1>
-            <div className="mt-48 mb-48 flex flex-col md:flex-row space-x-4 space-y-4 md:space-y-0">
+            <div className="mt-48 mb-48 flex flex-col md:flex-row space-x-0 md:space-x-4 space-y-4 md:space-y-0">
                 <div className="space-y-6 font-sans">
                     <h2 className="justify-start text-lg md:text-xl p-0 md:pr-10 px-4 md:px-0">
                         If you want to work together or just want to say hi, my
@@ -62,7 +62,7 @@ function Contact({ pageInfo, socials }) {
                 <ContactForm email={pageInfo?.email} />
             </div>
 
-            <footer className="font-mono absolute bottom-10 w-full border-t-secondary dark:border-t-secondary_dark border-t-2 text-center text-xs md:text-sm pt-3">
+            <footer className="font-mono absolute bottom-10 w-[95%] md:w-full border-t-secondary dark:border-t-secondary_dark border-t-2 text-center text-xs md:text-sm pt-3">
                 <p className="px-3">
                     Site created by me with Next.js | React | Tailwind |
                     Sanity.io | Vercel

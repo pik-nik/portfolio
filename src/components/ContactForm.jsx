@@ -14,91 +14,89 @@ function ContactForm() {
     )
 
     return (
-        <div>
-            <form
-                className="flex flex-col max-w-full space-y-2 mx-auto font-sans text-sm md:text-base"
-                // onSubmit={handleSubmit(onSubmit)}
-                onSubmit={handleSubmit}
-            >
-                <div className="flex flex-col space-x-0 space-y-2 md:flex-row md:space-x-2 md:space-y-0">
-                    <input
-                        className="contactInput"
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Name"
-                        // {...register("name")}
-                        required
-                    />
-                    <ValidationError
-                        prefix="Name"
-                        field="name"
-                        errors={state.errors}
-                    />
-                    <input
-                        className="contactInput"
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Email"
-                        // {...register("email")}
-                        required
-                    />
-                    <ValidationError
-                        prefix="Email"
-                        field="email"
-                        errors={state.errors}
-                    />
-                </div>
+        <form
+            className="flex flex-col max-w-full space-y-2 font-sans text-sm md:text-base px-2"
+            // onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleSubmit}
+        >
+            <div className="flex flex-col space-x-0 space-y-2 md:flex-row md:space-x-2 md:space-y-0">
                 <input
                     className="contactInput"
                     type="text"
-                    id="subject"
-                    name="subject"
-                    placeholder="Subject"
-                    // {...register("subject")}
+                    id="name"
+                    name="name"
+                    placeholder="Name"
+                    // {...register("name")}
                     required
                 />
                 <ValidationError
-                    prefix="Subject"
-                    field="subject"
+                    prefix="Name"
+                    field="name"
                     errors={state.errors}
                 />
-                <textarea
+                <input
                     className="contactInput"
-                    id="message"
-                    placeholder="Message"
-                    rows="4"
-                    name="message"
-                    // {...register("message")}
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                    // {...register("email")}
                     required
                 />
                 <ValidationError
-                    prefix="Message"
-                    field="message"
+                    prefix="Email"
+                    field="email"
                     errors={state.errors}
                 />
-                <button
-                    className="button disabled:opacity-30 disabled:pointer-events-none"
-                    type="submit"
-                    disabled={state.submitting || state.succeeded}
-                >
-                    {state.succeeded
-                        ? "Sent!"
-                        : state.submitting
-                        ? "Sending..."
-                        : "Send message"}
-                </button>
-                {state.succeeded ? (
-                    <div className="item-center text-center text-primary dark:text-primary_dark flex items-center justify-center space-x-2">
-                        <p>Thank you for your message</p>
-                        <RiChatSmileLine />
-                    </div>
-                ) : (
-                    " "
-                )}
-            </form>
-        </div>
+            </div>
+            <input
+                className="contactInput"
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="Subject"
+                // {...register("subject")}
+                required
+            />
+            <ValidationError
+                prefix="Subject"
+                field="subject"
+                errors={state.errors}
+            />
+            <textarea
+                className="contactInput"
+                id="message"
+                placeholder="Message"
+                rows="4"
+                name="message"
+                // {...register("message")}
+                required
+            />
+            <ValidationError
+                prefix="Message"
+                field="message"
+                errors={state.errors}
+            />
+            <button
+                className="button disabled:opacity-30 disabled:pointer-events-none"
+                type="submit"
+                disabled={state.submitting || state.succeeded}
+            >
+                {state.succeeded
+                    ? "Sent!"
+                    : state.submitting
+                    ? "Sending..."
+                    : "Send message"}
+            </button>
+            {state.succeeded ? (
+                <div className="item-center text-center text-primary dark:text-primary_dark flex items-center justify-center space-x-2">
+                    <p>Thank you for your message</p>
+                    <RiChatSmileLine />
+                </div>
+            ) : (
+                " "
+            )}
+        </form>
     )
 }
 
