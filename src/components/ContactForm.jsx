@@ -3,12 +3,6 @@ import { useForm, ValidationError } from "@formspree/react"
 import { RiChatSmileLine } from "react-icons/ri"
 
 function ContactForm() {
-    // const { register, handleSubmit } = useForm({ email })
-    // const onSubmit = data => {
-    //     console.log(data)
-    //     window.location.href = `mailto:${email}?subject=${data.subject}&body=Hi, my name is ${data.name}. My email is ${data.email}. ${data.message} `
-    // }
-
     const [state, handleSubmit] = useForm(
         process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT
     )
@@ -16,7 +10,6 @@ function ContactForm() {
     return (
         <form
             className="flex flex-col max-w-full space-y-2 font-sans text-sm md:text-base px-2"
-            // onSubmit={handleSubmit(onSubmit)}
             onSubmit={handleSubmit}
         >
             <div className="flex flex-col space-x-0 space-y-2 md:flex-row md:space-x-2 md:space-y-0">
@@ -26,7 +19,6 @@ function ContactForm() {
                     id="name"
                     name="name"
                     placeholder="Name"
-                    // {...register("name")}
                     required
                 />
                 <ValidationError
@@ -40,7 +32,6 @@ function ContactForm() {
                     id="email"
                     name="email"
                     placeholder="Email"
-                    // {...register("email")}
                     required
                 />
                 <ValidationError
@@ -55,7 +46,6 @@ function ContactForm() {
                 id="subject"
                 name="subject"
                 placeholder="Subject"
-                // {...register("subject")}
                 required
             />
             <ValidationError
@@ -69,7 +59,6 @@ function ContactForm() {
                 placeholder="Message"
                 rows="4"
                 name="message"
-                // {...register("message")}
                 required
             />
             <ValidationError

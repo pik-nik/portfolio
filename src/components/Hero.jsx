@@ -34,13 +34,12 @@ function Hero({ pageInfo }) {
             </div>
             <div className="m-0 md:ml-10">
                 <BackgroundCircles />
-                <div className="rounded-full h-48 w-48 md:h-96 md:w-96 mx-auto object-cover block">
+                <div className="h-[250px] w-[250px] md:h-96 md:w-96 mx-auto relative">
                     <Image
                         src={urlFor(pageInfo?.heroImage).url()}
-                        alt={`profile pic of ${pageInfo?.name}`}
-                        width="390"
-                        height="390"
-                        className="rounded-full object-contain h-[250px] w-[250px] md:h-[390px] md:w-[390px] z-100"
+                        alt={`profile picture of ${pageInfo?.name}`}
+                        fill
+                        className="rounded-full object-cover z-10"
                         priority
                     />
                 </div>
