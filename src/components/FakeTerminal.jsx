@@ -23,7 +23,7 @@ function FakeTerminal({ pageInfo }) {
                 id="screen"
                 className="w-full h-fit bg-tertiary/30 dark:bg-[#000000] rounded-b-md"
             >
-                <div className="font-mono tracking-[2px] relative w-11/12 m-auto p-4 md:p-6 text-sm md:text-base space-y-3">
+                <div className="font-mono tracking-[2px] relative w-11/12 m-auto p-4 md:p-6 text-sm md:text-base space-y-4 md:space-y-6 last:pb-6 md:last:pb-10">
                     {sentences?.map((sentence, index) => (
                         <div key={index}>
                             <p className="text-primary dark:text-primary_dark">

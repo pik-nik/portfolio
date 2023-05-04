@@ -14,6 +14,9 @@
     .button {
         @apply py-2 px-4 font-sans text-sm rounded hover:bg-secondary dark:hover:bg-secondary_dark text-primary dark:text-primary_dark hover:text-background dark:hover:text-text_dark border border-primary dark:border-primary_dark hover:border-background hover:dark:border-background_dark;
     }
+    .section_index {
+        @apply snap-start w-full md:w-4/5 max-w-[1250px] mx-auto;
+    }
     .section_div {
         @apply py-16 px-4 mx-auto flex relative justify-center items-center text-center h-fit md:min-h-screen md:max-h-fit;
     }
