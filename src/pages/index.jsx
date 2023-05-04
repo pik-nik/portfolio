@@ -9,8 +9,12 @@ import Contact from "@components/components/Contact"
 import { loadInfo } from "@components/lib/loadInfo"
 import { loadProjects } from "@components/lib/loadProjects"
 import { loadSocials } from "@components/lib/loadSocials"
+import { urlFor } from "../../sanity"
 
 export default function Home({ pageInfo, projects, socials }) {
+    const portfolio = projects.filter(
+        project => project.title === "Personal Portfolio"
+    )[0]
     return (
         <div className="h-screen snap-none md:snap-y md:snap-mandatory z-0 overflow-y-scroll overflow-x-hidden scrollbar-track-tertiary/80 dark:scrollbar-track-tertiary_dark/80 scrollbar-thumb-primary/80 dark:scrollbar-thumb-primary_dark/80 scrollbar-thin">
             <Head>
@@ -36,6 +40,10 @@ export default function Home({ pageInfo, projects, socials }) {
                     href="/favicon-16x16.png"
                 />
                 <link rel="manifest" href="/site.webmanifest" />
+                <meta
+                    property="og:image"
+                    content={urlFor(portfolio?.image).url()}
+                />
             </Head>
             <Navbar socials={socials} pageInfo={pageInfo} />
             <Sidebar socials={socials} />
