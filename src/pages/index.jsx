@@ -6,7 +6,9 @@ import About from "@components/components/About"
 import Skills from "@components/components/Skills"
 import Projects from "@components/components/Projects"
 import Contact from "@components/components/Contact"
-import { client } from "../../sanity"
+import { loadInfo } from "@components/lib/loadInfo"
+import { loadProjects } from "@components/lib/loadProjects"
+import { loadSocials } from "@components/lib/loadSocials"
 
 export default function Home({ pageInfo, projects, socials }) {
     return (
@@ -69,30 +71,14 @@ export default function Home({ pageInfo, projects, socials }) {
 }
 
 export const getStaticProps = async () => {
-    // const pageInfo = await fetchInfo()
-    const pageInfo = await client.fetch(`
-    *[_type == "info"][0] {
-        ..., 
-        socials[]->, 
-        skillsOrder[]->,
-        "resumeURL": resume.asset->url
-      }
-      `)
-    // const projects = await fetchProjects()
-    const projects =
-        await client.fetch(`*[_type == "project"] | order(_createdAt desc) {
-        ..., 
-        technologies[]->
-      } `)
-    // const skills = await fetchSkills()
-    // const socials = await fetchSocials()
-    const socials = await client.fetch(`*[_type == "social"]`)
+    const pageInfo = await loadInfo()
+    const projects = await loadProjects()
+    const socials = await loadSocials()
 
     return {
         props: {
             pageInfo,
             projects,
-            // skills,
             socials,
         },
         revalidate: 60,
