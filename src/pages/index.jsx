@@ -19,7 +19,7 @@ export default function Home({ pageInfo, projects, socials }) {
         <div className="h-screen snap-none md:snap-y md:snap-mandatory z-0 overflow-y-scroll overflow-x-hidden scrollbar-track-tertiary/80 dark:scrollbar-track-tertiary_dark/80 scrollbar-thumb-primary/80 dark:scrollbar-thumb-primary_dark/80 scrollbar-thin">
             <Head>
                 <title>
-                    Nikki Pham | Portfolio | Software Engineer |
+                    {pageInfo?.name} | Portfolio | {pageInfo?.role} |
                     {pageInfo?.location}
                 </title>
                 <link
@@ -41,9 +41,20 @@ export default function Home({ pageInfo, projects, socials }) {
                 />
                 <link rel="manifest" href="/site.webmanifest" />
                 <meta
+                    name="title"
+                    property="og:title"
+                    content={pageInfo?.name}
+                ></meta>
+                <meta property="og:type" content="website" />
+                <meta
                     property="og:image"
                     content={urlFor(portfolio?.image).url()}
                 />
+                <meta
+                    name="description"
+                    property="og:description"
+                    content={`Portfolio website for ${pageInfo?.name}, ${pageInfo?.role} based in ${pageInfo?.location}`}
+                ></meta>
             </Head>
             <Navbar socials={socials} pageInfo={pageInfo} />
             <Sidebar socials={socials} />
