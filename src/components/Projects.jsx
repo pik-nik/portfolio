@@ -16,10 +16,8 @@ function Projects({ projects, skills }) {
     })
 
     return (
-        <div className="p-16 px-4 md:min-h-screen md:max-h-fit flex justify-center relative text-center mx-auto">
-            <h1 className="text-primary dark:text-primary_dark absolute top-32 uppercase tracking-[10px] text-2xl">
-                Projects
-            </h1>
+        <div className="section_div">
+            <h1 className="section_heads">Projects</h1>
             <ProjectsFilter skills={skills} setSelectedTech={setSelectedTech} />
 
             <div className="flex overflow-hidden flex-col md:flex-row max-w-full justify-evenly relative">

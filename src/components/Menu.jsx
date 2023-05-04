@@ -1,5 +1,7 @@
 import Link from "next/link"
-function ContentMenu({ nav, navigations, pageInfo }) {
+import handleScroll from "@components/utils/handleScroll"
+
+function Menu({ nav, navigations, pageInfo }) {
     return (
         <div
             className={
@@ -17,6 +19,7 @@ function ContentMenu({ nav, navigations, pageInfo }) {
                         <Link
                             href={section.path}
                             className="ml-5 border-b border-fourth dark:border-primary_dark"
+                            onClick={handleScroll}
                         >
                             {section.label}
                         </Link>
@@ -37,4 +40,4 @@ function ContentMenu({ nav, navigations, pageInfo }) {
     )
 }
 
-export default ContentMenu
+export default Menu

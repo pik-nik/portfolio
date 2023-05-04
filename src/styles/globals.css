@@ -14,10 +14,13 @@
     .button {
         @apply py-2 px-4 font-sans text-sm rounded hover:bg-secondary dark:hover:bg-secondary_dark text-primary dark:text-primary_dark hover:text-background dark:hover:text-text_dark border border-primary dark:border-primary_dark hover:border-background hover:dark:border-background_dark;
     }
-    .contactInput {
-        @apply outline-none bg-tertiary/50 dark:bg-tertiary_dark/30 rounded-md border-b-2 px-4 py-2 border-primary dark:border-primary_dark placeholder-primary dark:placeholder-primary_dark transition-all focus:border-secondary dark:focus:border-secondary_dark grow;
+    .section_div {
+        @apply py-16 px-4 mx-auto flex relative justify-center items-center text-center h-fit md:min-h-screen md:max-h-fit;
     }
     .section_heads {
         @apply text-primary dark:text-primary_dark absolute top-32 uppercase tracking-[10px] text-2xl z-10;
+    }
+    .contactInput {
+        @apply outline-none bg-tertiary/50 dark:bg-tertiary_dark/30 rounded-md border-b-2 px-4 py-2 border-primary dark:border-primary_dark placeholder-primary dark:placeholder-primary_dark transition-all focus:border-secondary dark:focus:border-secondary_dark grow;
     }
 }

@@ -8,6 +8,7 @@ function PhoneNavBar({ nav, handleNav, socials }) {
     const linkedIn = socials.filter(contact => contact.title === "LinkedIn")[0]
     const github = socials.filter(contact => contact.title === "Github")[0]
     const email = socials.filter(contact => contact.title === "Email")[0]
+
     return (
         <motion.div
             className="flex md:hidden space-x-4 justify-center items-center"
@@ -41,7 +42,7 @@ function PhoneNavBar({ nav, handleNav, socials }) {
             {nav ? (
                 <AiOutlineClose
                     size={30}
-                    className="text-secondary dark:text-secondary_dark cursor-pointer"
+                    className="text-secondary dark:text-secondary_dark cursor-pointer animate-pulse"
                     onClick={handleNav}
                 />
             ) : (

@@ -1,8 +1,8 @@
 import Image from "next/image"
 import { urlFor } from "../../sanity"
-import { GoLinkExternal } from "react-icons/go"
-import { IoLogoGithub } from "react-icons/io"
 import Link from "next/link"
+import ProjectLinks from "./ProjectLinks"
+import ProjectTechStack from "./ProjectTechStack"
 
 function ProjectCard({ project, selected }) {
     return (
@@ -11,56 +11,31 @@ function ProjectCard({ project, selected }) {
                 selected ? "opacity-100" : "opacity-40"
             }`}
         >
+            <ProjectLinks project={project} />
             <Link
-                href={project?.linkToGithub}
+                href={
+                    project?.linkToBuild
+                        ? project.linkToBuild
+                        : project.linkToGithub
+                }
                 target="_blank"
                 rel="noreferrer noopener"
             >
-                <IoLogoGithub
-                    className="absolute top-5 right-5 cursor-pointer text-primary dark:text-primary_dark hover:text-secondary hover:dark:text-secondary_dark"
-                    size={30}
-                />
-            </Link>
-            {project.linkToBuild ? (
-                <Link
-                    href={project.linkToBuild}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                >
-                    <GoLinkExternal
-                        className="absolute top-5 right-14 cursor-pointer text-primary dark:text-primary_dark hover:text-secondary hover:dark:text-secondary_dark"
-                        size={30}
+                <div className="flex justify-center mx:0 md:mr-5 mt-14 md:mt-0">
+                    <Image
+                        src={urlFor(project?.image).url()}
+                        alt={project?.title}
+                        width="500"
+                        height="500"
+                        className="w-[60%] max-h-[100%] rounded-lg object-cover object-center grow shadow-lg"
                     />
-                </Link>
-            ) : (
-                ""
-            )}
-            <div className="flex justify-center mx:0 md:pr-5 pt-14">
-                <Image
-                    src={urlFor(project?.image).url()}
-                    alt={project?.title}
-                    width="500"
-                    height="500"
-                    className="w-[60%] max-h-[100%] rounded-lg object-cover object-center grow shadow-lg"
-                />
-            </div>
+                </div>
+            </Link>
             <div className="px-0 font-sans w-[100%] md:w-[60%]">
                 <h4 className="py-1 mb-4 uppercase font-mono tracking-[3px] text-2xl border-b-4 border-b-secondary dark:border-b-secondary_dark">
                     {project?.title}
                 </h4>
-                <div className="flex space-x-2 my-3 items-center justify-center m-auto bg-text_dark/40 w-fit px-2 py-1 rounded-lg">
-                    {project?.technologies.map(tech => (
-                        <div key={tech._id}>
-                            <Image
-                                src={urlFor(tech.image).url()}
-                                alt={tech.title}
-                                width="50"
-                                height="50"
-                                className="w-[40px] mx-0"
-                            />
-                        </div>
-                    ))}
-                </div>
+                <ProjectTechStack project={project} />
                 <p className="w-full text-sm">{project?.summary}</p>
                 {
                     /* <button className="button hover:border-tertiary hover:dark:border-tertiary_dark mt-2">

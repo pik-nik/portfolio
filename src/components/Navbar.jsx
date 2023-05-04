@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import handleScroll from "@components/utils/handleScroll"
 import DarkModeButton from "./DarkModeButton"
 import PhoneNavBar from "./PhoneNavBar"
-import ContentMenu from "./ContentMenu"
+import Menu from "./Menu"
 
 const Navbar = ({ socials, pageInfo }) => {
     const navigations = [
@@ -65,11 +65,7 @@ const Navbar = ({ socials, pageInfo }) => {
                 <DarkModeButton />
             </motion.div>
             <PhoneNavBar nav={nav} handleNav={handleNav} socials={socials} />
-            <ContentMenu
-                nav={nav}
-                navigations={navigations}
-                pageInfo={pageInfo}
-            />
+            <Menu nav={nav} navigations={navigations} pageInfo={pageInfo} />
         </nav>
     )
 }

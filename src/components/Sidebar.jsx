@@ -1,5 +1,6 @@
 import { IoLogoLinkedin, IoLogoGithub, IoIosMail } from "react-icons/io"
 import Link from "next/link"
+
 const Sidebar = ({ socials }) => {
     const linkedIn = socials.filter(contact => contact.title === "LinkedIn")[0]
     const github = socials.filter(contact => contact.title === "Github")[0]

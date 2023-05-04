@@ -6,7 +6,7 @@ import Link from "next/link"
 
 function Hero({ pageInfo }) {
     return (
-        <div className="relative align-middle flex flex-col md:flex-row justify-center space-y-5 items-center text-center md:text-left md:min-h-screen md:max-h-fit">
+        <div className="relative flex flex-col md:flex-row justify-evenly space-y-5 items-center text-center md:text-left md:min-h-screen md:max-h-fit">
             <div className="min-w-[375px]">
                 <h2 className="text-2xl md:text-4xl pb-2">Hello, my name is</h2>
                 <h1 className="md:text-7xl sm:text-6xl text-5xl text-primary dark:text-primary_dark font-bold pb-2">

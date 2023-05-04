@@ -5,7 +5,6 @@ import { urlFor } from "../../sanity"
 function Skill({ skill }) {
     return (
         <div className="group relative flex flex-col cursor-pointer justify-center rounded-2xl border-2 border-tertiary dark:border-primary_dark hover:border-secondary dark:hover:border-secondary_dark dark:bg-text_dark/20 object-contain items-center">
-            {/* <p className="lg:hidden font-sans font text-sm">{skill?.title}</p> */}
             <Image
                 src={urlFor(skill?.image).url()}
                 alt={skill?.title}

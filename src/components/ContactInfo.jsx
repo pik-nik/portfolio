@@ -9,7 +9,7 @@ function ContactInfo({ socials, pageInfo }) {
 
     return (
         <div className="space-y-6 font-sans">
-            <h2 className="justify-start text-lg md:text-xl p-0 md:pr-10 px-4 md:px-0">
+            <h2 className="justify-start text-lg md:text-xl md:text-left p-0 md:pr-10 px-4 md:px-0">
                 If you would like to work together or just want to say hi, my
                 inbox is always open.
             </h2>
