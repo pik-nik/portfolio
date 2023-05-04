@@ -53,7 +53,11 @@ export default function Home({ pageInfo, projects, socials }) {
                 <meta
                     name="description"
                     property="og:description"
-                    content={`Portfolio website for ${pageInfo?.name}, ${pageInfo?.role} based in ${pageInfo?.location}`}
+                    content={`Portfolio website for ${pageInfo?.name}, ${
+                        pageInfo?.role
+                    } based in ${pageInfo?.location}. ${pageInfo?.skillsOrder
+                        .map(skill => skill.title)
+                        .join(", ")}.`}
                 ></meta>
             </Head>
             <Navbar socials={socials} pageInfo={pageInfo} />
